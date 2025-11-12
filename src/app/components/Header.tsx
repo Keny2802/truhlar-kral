@@ -99,7 +99,7 @@ const Header = ({ ...props }: headerProps) => {
                             </p>
                         </Wrapper>
                     </Wrapper>
-                    <ul className="hidden lg:flex lg:gap-4 header-items-wrapper">
+                    <ul className="hidden lg:flex lg:gap-8 header-items-wrapper">
                         {
                             headerSet.map((headerItem, headerItemIndex) => (
                                 <Fragment key={headerItemIndex}>

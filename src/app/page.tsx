@@ -6,6 +6,8 @@ import {
 import Header from "./components/Header";
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
+import ServicesInfo from "./sections/ServicesInfo";
+import ServiceContact from "./sections/ServicesContact";
 import Footer from "./sections/Footer";
 
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
       className="absolute top-0 left-0 lg:bg-transparent"
       />
       <Services />
+      <ServicesInfo />
+      <ServiceContact />
       <Footer />
     </Fragment>
   );
