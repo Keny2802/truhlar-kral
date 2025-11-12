@@ -25,7 +25,8 @@ const Hero = () => {
                 decoding="async"
                 className="w-full max-h-screen lg:object-cover backdrop-blur-sm"
                 />
-                <Wrapper className="absolute top-[30%] left-[5%] lg:top-[25%] lg:left-[25%] text-white text-center max-w-6xl mx-auto">
+                {/* absolute top-[30%] left-[5%] lg:top-[25%] lg:left-[25%] text-white text-center max-w-6xl mx-auto */}
+                <Wrapper className="absolute inset-0 flex flex-col justify-center items-center text-white text-center max-w-6xl mx-auto">
                     <h1 className="text-5xl lg:text-8xl font-black">
                         Truhlářství Král
                     </h1>
