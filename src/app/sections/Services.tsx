@@ -1,0 +1,102 @@
+"use client";
+
+import {
+    useState,
+    useEffect,
+    Fragment,
+    ReactNode
+} from "react";
+import Image from "next/image";
+import Link from "next/link";
+import clsx from "clsx";
+
+import Wrapper from "../components/Wrapper";
+
+const services = [
+    {
+        label: "Služby",
+        title: "Kuchyně na míru",
+        href: "/kitchens",
+        src: "/sources/services/kitchen.jpg",
+        alt: "Kitchen"
+    },
+    {
+        label: "Služby",
+        title: "Nábytek na míru",
+        href: "/furniture",
+        src: "/sources/services/furniture.jpg",
+        alt: "Furniture"
+    },
+    {
+        label: "Služby",
+        title: "Koupelny na míru",
+        href: "/bathroom",
+        src: "/sources/services/bathroom.jpg",
+        alt: "Bathroom"
+    },
+    {
+        label: "Služby",
+        title: "Střešní práce",
+        href: "/roof",
+        src: "/sources/services/roof.jpg",
+        alt: "Roof"
+    }
+];
+
+const Services = () => {
+    return (
+        <Fragment>
+            <Wrapper className="bg-[#362315] text-white px-8 md:px-24 py-16 w-full">
+                <Wrapper className="mx-auto text-center">
+                    <h2 className="text-4xl md:text-5xl font-black">
+                        Naše Služby
+                    </h2>
+                    <p className="my-2">
+                        Vyberte si z naší nabídky poskytovaných služeb
+                    </p>
+                    <Wrapper className="flex justify-center items-center gap-8 flex-col md:flex-row mt-4 services-wrapper">
+                        {
+                            services.map((service, serviceIndex) => (
+                                <Fragment key={serviceIndex}>
+                                    <Wrapper
+                                    className="w-full lg:w-auto service-wrapper"
+                                    key={serviceIndex}>
+                                        <Link
+                                        href={service.href}>
+                                            <Wrapper className="relative group">
+                                                <Image
+                                                height={1000}
+                                                width={1000}
+                                                src={service.src}
+                                                alt={service.alt}
+                                                loading="lazy"
+                                                decoding="async"
+                                                className="h-auto w-full md:h-[426px] md:w-[282px] rounded-md cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                                />
+                                               <Wrapper className="absolute inset-0 bg-black/40 rounded-md opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                                    <p className="text-lg tracking-wide absolute left-10 lg:left-5 bottom-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">
+                                                        Zjistit více
+                                                    </p>
+                                               </Wrapper>
+                                               <Wrapper className="absolute left-10 lg:left-2.5 bottom-5 flex flex-col transition-all duration-300 ease-in-out group-hover:-translate-y-10">
+                                                    <p className="text-lg lg:text-2xl font-black tracking-wide text-start text-[#f8aa0e]">
+                                                        {service.label}
+                                                    </p>
+                                                    <p className="text-2xl lg:text-3xl font-black">
+                                                        {service.title}
+                                                    </p>
+                                               </Wrapper>
+                                            </Wrapper>
+                                        </Link>
+                                    </Wrapper>
+                                </Fragment>
+                            ))
+                        }
+                </Wrapper>
+                </Wrapper>
+            </Wrapper>
+        </Fragment>
+    );
+};
+
+export default Services;
