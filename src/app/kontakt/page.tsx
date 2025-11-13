@@ -8,12 +8,15 @@ import {
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import setLinkWithoutHash from "../functions/setLinkWithoutHash";
 
 import Wrapper from "../components/Wrapper";
 import Logo from "../components/Logo";
 import Header from "../components/Header";
+import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
+import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
+import PageLabel from "../components/PageLabel";
 import Footer from "../sections/Footer";
-import setLinkWithoutHash from "../components/setLinkWithoutHash";
 import Powered from "../components/Powered";
 import Year from "../components/Year";
 
@@ -34,22 +37,23 @@ const Contact = ({ ...props }: contactProps) => {
         <Fragment>
             <Wrapper className={clsx(`${className || ""} contact-wrapper`)}>
                 <Header
-                key="contact"
-                whichPage="contact"
-                className="lg:bg-transparent"
+                    key="kontakt"
+                    whichPage="kontakt"
                 />
                 <Wrapper className="relative">
                     <Image
-                    height={1000}
-                    width={1000}
-                    src="/sources/Hero_1.jpg"
-                    alt="Hero Fotka Truhlář Král"
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full max-h-screen lg:object-cover backdrop-blur-sm"
+                        height={1000}
+                        width={1000}
+                        src="/sources/Hero_1.jpg"
+                        alt="Hero Fotka Truhlář Král"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full max-h-screen lg:object-cover backdrop-blur-sm"
                     />
                     {/* absolute top-[30%] lg:top-[25%] left-[12%] lg:left-[25%] text-white text-center max-w-6xl mx-auto */}
-                    <Wrapper className="absolute inset-0 flex flex-col justify-center items-center max-w-6xl mx-auto text-center text-white">
+                    <DarkOverlayWrapper />
+                    <HeroOverlayWrapper className="absolute inset-0 flex flex-col justify-center items-center max-w-6xl mx-auto text-center text-white">
+                        <PageLabel pageLabelText="Kontakt" />
                         <h2 className="text-5xl lg:text-8xl font-black">
                             Kontaktujte nás
                         </h2>
@@ -58,26 +62,26 @@ const Contact = ({ ...props }: contactProps) => {
                         </p>
                         <Wrapper className="flex justify-center items-center gap-4 mt-8">
                             <Link
-                            href="#contact"
-                            className="p-4 bg-[#362315] rounded-md cursor-pointer"
-                            onClick={(e) => {
-                                setLinkWithoutHash(e, "contact");
-                            }}>
+                                href="#contact"
+                                className="p-4 bg-[#362315] rounded-md cursor-pointer"
+                                onClick={(e) => {
+                                    setLinkWithoutHash(e, "contact");
+                                }}>
                                 Kontaktujte nás
                             </Link>
                             <Link
-                            href="#multi-step-form"
-                            className="p-4 bg-white text-black rounded-md cursor-pointer"
-                            onClick={(e) => {
-                                setLinkWithoutHash(e, "multi-step-form");
-                            }}>
+                                href="#multi-step-form"
+                                className="p-4 bg-white text-black rounded-md cursor-pointer"
+                                onClick={(e) => {
+                                    setLinkWithoutHash(e, "multi-step-form");
+                                }}>
                                 Vyplňte Formulář
                             </Link>
                         </Wrapper>
-                    </Wrapper>
+                    </HeroOverlayWrapper>
                 </Wrapper>
                 <Wrapper
-                className="bg-white shadow-md p-8 lg:px-24 lg:py-16 contact-form-wrapper">
+                    className="bg-white shadow-md p-8 lg:px-24 lg:py-16 contact-form-wrapper">
                     <Wrapper className="flex justify-between gap-4 flex-col lg:flex-row">
                         <form className="bg-white shadow-md w-full lg:w-1/2 rounded-md p-4" id="multi-step-form">
                             <Wrapper className="flex items-center gap-4">
@@ -91,29 +95,29 @@ const Contact = ({ ...props }: contactProps) => {
                             </p>
                             <Wrapper className="flex justify-between lg:items-center flex-col lg:flex-row mt-4 border-b border-gray-200 p-2 tabs-wrapper">
                                 <button
-                                type="button"
-                                className={clsx(`${activeTab === "contact" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
-                                onClick={(e) => {
-                                    setActiveTab("contact");
-                                }}
+                                    type="button"
+                                    className={clsx(`${activeTab === "contact" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
+                                    onClick={(e) => {
+                                        setActiveTab("contact");
+                                    }}
                                 >
                                     Kontakt / Dotaz
                                 </button>
                                 <button
-                                type="button"
-                                className={clsx(`${activeTab === "order" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
-                                onClick={(e) => {
-                                    setActiveTab("order");
-                                }}
+                                    type="button"
+                                    className={clsx(`${activeTab === "order" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
+                                    onClick={(e) => {
+                                        setActiveTab("order");
+                                    }}
                                 >
                                     Objednávka
                                 </button>
                                 <button
-                                type="button"
-                                className={clsx(`${activeTab === "inquiry" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
-                                onClick={(e) => {
-                                    setActiveTab("inquiry");
-                                }}
+                                    type="button"
+                                    className={clsx(`${activeTab === "inquiry" && "bg-[#362315] text-white"} text-sm cursor-pointer px-4 py-2 rounded-md`)}
+                                    onClick={(e) => {
+                                        setActiveTab("inquiry");
+                                    }}
                                 >
                                     Poptávka
                                 </button>
@@ -129,11 +133,11 @@ const Contact = ({ ...props }: contactProps) => {
                                             <Wrapper className="mt-2 flex flex-col lg:flex-row gap-2">
                                                 <Wrapper className="relative">
                                                     <input
-                                                    type="text"
-                                                    placeholder="Jan Novák"
-                                                    autoComplete="off"
-                                                    spellCheck="false"
-                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                        type="text"
+                                                        placeholder="Jan Novák"
+                                                        autoComplete="off"
+                                                        spellCheck="false"
+                                                        className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                     />
                                                     <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                         1
@@ -141,11 +145,11 @@ const Contact = ({ ...props }: contactProps) => {
                                                 </Wrapper>
                                                 <Wrapper className="relative">
                                                     <input
-                                                    type="email"
-                                                    placeholder="jan.novak@seznam.cz"
-                                                    autoComplete="off"
-                                                    spellCheck="false"
-                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                        type="email"
+                                                        placeholder="jan.novak@seznam.cz"
+                                                        autoComplete="off"
+                                                        spellCheck="false"
+                                                        className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                     />
                                                     <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                         2
@@ -154,16 +158,16 @@ const Contact = ({ ...props }: contactProps) => {
                                             </Wrapper>
                                             <Wrapper className="relative mt-2">
                                                 <textarea
-                                                placeholder="Dobrý den, pane Králi, mám zájem o Vaše truhlářské služby. Prosím o Vaše laskavé zaslání cenové nabídky těchto služeb. Týká se o skříň na zakázku. Přeji hezký den Jan Novák"
-                                                autoComplete="off"
-                                                spellCheck="false"
-                                                className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
+                                                    placeholder="Dobrý den, pane Králi, mám zájem o Vaše truhlářské služby. Prosím o Vaše laskavé zaslání cenové nabídky těchto služeb. Týká se o skříň na zakázku. Přeji hezký den Jan Novák"
+                                                    autoComplete="off"
+                                                    spellCheck="false"
+                                                    className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
                                                 <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                     3
                                                 </span>
                                                 <button
-                                                type="submit"
-                                                className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
+                                                    type="submit"
+                                                    className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
                                                     Dokončit
                                                 </button>
                                             </Wrapper>
@@ -177,11 +181,11 @@ const Contact = ({ ...props }: contactProps) => {
                                         <Wrapper className="mt-2 flex flex-col lg:flex-row gap-2">
                                             <Wrapper className="relative">
                                                 <input
-                                                type="text"
-                                                placeholder="Jan Novák"
-                                                autoComplete="off"
-                                                spellCheck="false"
-                                                className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                    type="text"
+                                                    placeholder="Jan Novák"
+                                                    autoComplete="off"
+                                                    spellCheck="false"
+                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                 />
                                                 <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                     1
@@ -189,11 +193,11 @@ const Contact = ({ ...props }: contactProps) => {
                                             </Wrapper>
                                             <Wrapper className="relative">
                                                 <input
-                                                type="email"
-                                                placeholder="jan.novak@seznam.cz"
-                                                autoComplete="off"
-                                                spellCheck="false"
-                                                className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                    type="email"
+                                                    placeholder="jan.novak@seznam.cz"
+                                                    autoComplete="off"
+                                                    spellCheck="false"
+                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                 />
                                                 <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                     2
@@ -202,11 +206,11 @@ const Contact = ({ ...props }: contactProps) => {
                                         </Wrapper>
                                         <Wrapper className="relative mt-2">
                                             <input
-                                            type="adress"
-                                            placeholder="Pražská 111, Šestajovice"
-                                            autoComplete="off"
-                                            spellCheck="false"
-                                            className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                type="adress"
+                                                placeholder="Pražská 111, Šestajovice"
+                                                autoComplete="off"
+                                                spellCheck="false"
+                                                className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                             />
                                             <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                 3
@@ -214,16 +218,16 @@ const Contact = ({ ...props }: contactProps) => {
                                         </Wrapper>
                                         <Wrapper className="relative mt-2">
                                             <textarea
-                                            placeholder="Dobrý den, pane Králi, objednávám si koupelnu na míru od Vás. Přeji hezký den Jan Novák"
-                                            autoComplete="off"
-                                            spellCheck="false"
-                                            className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
+                                                placeholder="Dobrý den, pane Králi, objednávám si koupelnu na míru od Vás. Přeji hezký den Jan Novák"
+                                                autoComplete="off"
+                                                spellCheck="false"
+                                                className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
                                             <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                 4
                                             </span>
                                             <button
-                                            type="submit"
-                                            className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
+                                                type="submit"
+                                                className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
                                                 Dokončit
                                             </button>
                                         </Wrapper>
@@ -236,11 +240,11 @@ const Contact = ({ ...props }: contactProps) => {
                                         <Wrapper className="mt-2 flex flex-col lg:flex-row gap-2">
                                             <Wrapper className="relative">
                                                 <input
-                                                type="text"
-                                                placeholder="Jan Novák"
-                                                autoComplete="off"
-                                                spellCheck="false"
-                                                className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                    type="text"
+                                                    placeholder="Jan Novák"
+                                                    autoComplete="off"
+                                                    spellCheck="false"
+                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                 />
                                                 <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                     1
@@ -248,11 +252,11 @@ const Contact = ({ ...props }: contactProps) => {
                                             </Wrapper>
                                             <Wrapper className="relative">
                                                 <input
-                                                type="email"
-                                                placeholder="jan.novak@seznam.cz"
-                                                autoComplete="off"
-                                                spellCheck="false"
-                                                className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
+                                                    type="email"
+                                                    placeholder="jan.novak@seznam.cz"
+                                                    autoComplete="off"
+                                                    spellCheck="false"
+                                                    className="w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none"
                                                 />
                                                 <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                     2
@@ -261,16 +265,16 @@ const Contact = ({ ...props }: contactProps) => {
                                         </Wrapper>
                                         <Wrapper className="relative mt-2">
                                             <textarea
-                                            placeholder="Dobrý den, pane Králi, poptávám po nové střeše. Prosím o Vaše laskavé zaslání cenové nabídky o novou střechu. Mockrát Vám děkuji a přeji krásný den, Jan Novák"
-                                            autoComplete="off"
-                                            spellCheck="false"
-                                            className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
+                                                placeholder="Dobrý den, pane Králi, poptávám po nové střeše. Prosím o Vaše laskavé zaslání cenové nabídky o novou střechu. Mockrát Vám děkuji a přeji krásný den, Jan Novák"
+                                                autoComplete="off"
+                                                spellCheck="false"
+                                                className="h-52 w-full rounded-md border border-gray-200 pl-12 p-2 focus:outline-none resize-none placeholder:text-[15.5px] text-sm"></textarea>
                                             <span className="absolute top-2 left-4 text-lg font-black border-b border-[#362315]">
                                                 3
                                             </span>
                                             <button
-                                            type="submit"
-                                            className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
+                                                type="submit"
+                                                className="mt-2 p-4 bg-[#362315] text-white w-full rounded-md cursor-pointer">
                                                 Dokončit
                                             </button>
                                         </Wrapper>
@@ -282,12 +286,12 @@ const Contact = ({ ...props }: contactProps) => {
                                 <Year />
                             </Wrapper>
                         </form>
-                        
+
                         <Wrapper
-                        className="flex flex-col"
-                        attributes={{
-                            id: "contact"
-                        }}>
+                            className="flex flex-col"
+                            attributes={{
+                                id: "contact"
+                            }}>
                             <p className="text-[#362315] text-3xl lg:text-4xl font-black border-b border-gray-200 label">
                                 Kontaktní údaje
                             </p>
@@ -303,15 +307,15 @@ const Contact = ({ ...props }: contactProps) => {
                                     </Wrapper>
                                     <Wrapper>
                                         <Link
-                                        href={`tel:737337737`}
-                                        className="text-base">
+                                            href={`tel:737337737`}
+                                            className="text-base">
                                             737 337 737
                                         </Link>
                                     </Wrapper>
                                     <Wrapper>
                                         <Link
-                                        href={`mailto:roman.kral@truhlarstvikral.cz`}
-                                        className="text-base">
+                                            href={`mailto:roman.kral@truhlarstvikral.cz`}
+                                            className="text-base">
                                             roman.kral@truhlarstvikral.cz
                                         </Link>
                                     </Wrapper>

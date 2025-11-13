@@ -6,7 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Wrapper from "../components/Wrapper";
-import Header from "../components/Header";
+import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
+import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
+import PageLabel from "../components/PageLabel";
+
+// opravdu na sobě makat nedělat věci lážo plážo
 
 const Hero = () => {
     return (
@@ -26,7 +30,9 @@ const Hero = () => {
                 className="w-full max-h-screen lg:object-cover backdrop-blur-sm"
                 />
                 {/* absolute top-[30%] left-[5%] lg:top-[25%] lg:left-[25%] text-white text-center max-w-6xl mx-auto */}
-                <Wrapper className="absolute inset-0 flex flex-col justify-center items-center text-white text-center max-w-6xl mx-auto">
+                <DarkOverlayWrapper />
+                <HeroOverlayWrapper className="absolute inset-0 flex flex-col justify-center items-center text-white text-center max-w-6xl mx-auto p-4">
+                    <PageLabel pageLabelText="Domovská stránka" />
                     <h1 className="text-5xl lg:text-8xl font-black">
                         Truhlářství Král
                     </h1>
@@ -37,18 +43,18 @@ const Hero = () => {
                     </p>
                     <Wrapper className="mt-15 flex justify-center items-center gap-4 cta-wrapper">
                         <Link
-                            href={`/contact`}
+                            href={`/kontakt`}
                             className="p-4 bg-[#362315] rounded-md cursor-pointer">
                             Kontaktujte nás
                         </Link>
                         <Link
-                            href={`/contact`}
+                            href={`/kontakt`}
                             // href={`/offer`}
                             className="p-4 bg-white text-black rounded-md cursor-pointer">
                             Nabídka zdarma
                         </Link>
                     </Wrapper>
-                </Wrapper>
+                </HeroOverlayWrapper>
             </Wrapper>
         </Fragment>
     );

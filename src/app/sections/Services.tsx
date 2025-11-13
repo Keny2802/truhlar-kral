@@ -16,28 +16,28 @@ const services = [
     {
         label: "Služby",
         title: "Kuchyně na míru",
-        href: "/kitchens",
+        href: "/kuchyne-na-miru",
         src: "/sources/services/kitchen.jpg",
         alt: "Kitchen"
     },
     {
         label: "Služby",
         title: "Nábytek na míru",
-        href: "/furniture",
+        href: "/nabytek-na-miru",
         src: "/sources/services/furniture.jpg",
         alt: "Furniture"
     },
     {
         label: "Služby",
         title: "Koupelny na míru",
-        href: "/bathroom",
+        href: "/koupelny-na-miru",
         src: "/sources/services/bathroom.jpg",
         alt: "Bathroom"
     },
     {
         label: "Služby",
         title: "Střešní práce",
-        href: "/roof",
+        href: "/stresni-prace",
         src: "/sources/services/roof.jpg",
         alt: "Roof"
     }
@@ -46,9 +46,9 @@ const services = [
 const Services = () => {
     return (
         <Fragment>
-            <Wrapper className="bg-[#362315] text-white px-12 md:px-24 md:py-16 py-8 w-full">
+            <Wrapper className="bg-[#362315] text-white px-6 md:px-24 md:py-16 py-4 w-full">
                 <Wrapper className="mx-auto text-center">
-                    <h2 className="text-4xl md:text-5xl font-black">
+                    <h2 className="pt-4 text-4xl md:text-5xl font-black">
                         Naše Služby
                     </h2>
                     <p className="my-2">
@@ -71,7 +71,7 @@ const Services = () => {
                                                     alt={service.alt}
                                                     loading="lazy"
                                                     decoding="async"
-                                                    className="w-[95%] h-auto max-h-[500px] sm:w-full md:w-[400px] md:h-[500px] lg:w-[282px] lg:h-[426px] rounded-md cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                                    className="w-full h-auto max-h-[500px] sm:w-full md:w-[400px] md:h-[500px] lg:w-[282px] lg:h-[426px] rounded-md cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-105"
                                                 />
                                                 <Wrapper className="absolute inset-0 bg-black/40 rounded-md opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
                                                     <p className="text-lg tracking-wide absolute left-10 lg:left-5 bottom-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">

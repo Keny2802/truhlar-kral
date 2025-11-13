@@ -3,14 +3,23 @@ import {
     ReactNode
 } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 
 import Wrapper from "../components/Wrapper";
 
-type servicesContactProps = {};
+type servicesContactProps = {
+    className?: string;
+    children?: ReactNode;
+};
 
 const ServiceContact = ({ ...props }) => {
+    const {
+        className,
+        children
+    } = props;
+
     return (
-        <Wrapper className="px-12 md:px-24 py-8 md:py-16 bg-white">
+        <Wrapper className={clsx(`${className || ""} px-12 md:px-24 py-8 md:py-16 bg-white`)}>
             <Wrapper className="flex justify-between flex-col md:flex-row">
                 <h2 className="text-2xl md:text-[32px] font-bold leading-tight">
                     Nevíte si rady / potřebujete konzultaci?
@@ -27,6 +36,7 @@ const ServiceContact = ({ ...props }) => {
                         Potřebuji konzultaci
                     </Link>
                 </Wrapper>
+                {children}
             </Wrapper>
         </Wrapper>
     );

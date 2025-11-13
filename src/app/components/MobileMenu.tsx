@@ -75,18 +75,19 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                     <ul className="mt-4 px-4 py-2 text-white flex flex-col gap-4 mobile-header-items-wrapper">
                         <li className="mobile-header-item">
                             <Link
-                            href="#home"
+                            href="/"
                             className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
-                            onClick={(e) => {
-                                setLinkWithoutHash(e, "home");
-                                setHamMenuToOpen(false);
-                            }}>
+                            // onClick={(e) => {
+                            //     setLinkWithoutHash(e, "home");
+                            //     setHamMenuToOpen(false);
+                            // }}
+                            >
                                 Domů
                             </Link>
                         </li>
                         <li className="flex items-center gap-2 mobile-header-item">
                             <Link
-                            href={`/services`}
+                            href={`/sluzby`}
                             className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
                             onClick={(e) => {
                                 setHamMenuToOpen(false);
@@ -122,7 +123,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                         <ul className="flex flex-col gap-2 drop-down-list">
                                             <li className="drop-down-list-item">
                                                 <Link
-                                                href={`/kitchens`}
+                                                href={`/kuchyne-na-miru`}
                                                 className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
                                                 onClick={(e) => {
                                                     setHamMenuToOpen(false);
@@ -132,7 +133,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                             </li>
                                             <li className="drop-down-list-item">
                                                 <Link
-                                                href={`/furniture`}
+                                                href={`/nabytek-na-miru`}
                                                 className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
                                                 onClick={(e) => {
                                                     setHamMenuToOpen(false);
@@ -142,7 +143,7 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                             </li>
                                             <li className="drop-down-list-item">
                                                 <Link
-                                                href={`bathrooms`}
+                                                href={`/koupelny-na-miru`}
                                                 className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
                                                 onClick={(e) => {
                                                     setHamMenuToOpen(false);
@@ -157,14 +158,14 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                         }
                         <li className="mobile-header-item">
                             <Link
-                            href="/about"
+                            href="/o-nas"
                             className="cursor-pointer transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]">
                                 O nás
                             </Link>
                         </li>
                         <li className="mobile-header-item">
                             <Link
-                            href="/contact"
+                            href="/kontakt"
                             className="cursor-pointer transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]">
                                 Kontakt
                             </Link>

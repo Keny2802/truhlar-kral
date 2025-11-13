@@ -2,9 +2,9 @@
 
 import {
     useState,
+    useEffect,
     Fragment,
     ReactNode,
-    useEffect
 } from "react";
 import {
     Menu,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 import Link from "next/link";
+import headerSet from "../sets/headerSet";
 
 import Wrapper from "./Wrapper";
 import Image from "next/image";
@@ -23,56 +24,37 @@ import Logo from "./Logo";
 type headerProps = {
     key: string;
     className?: string;
-    whichPage?: "home" | "about" | "contact" | "kitchens" | "furniture" | "bathroom";
+    whichPage?:
+    "domu"
+    | "sluzby"
+    | "o-nas"
+    | "kontakt"
+    | "kuchyne-na-miru"
+    | "nabytek-na-miru"
+    | "koupelny-na-miru";
     children?: ReactNode;
 };
-
-const headerSet = [
-    {
-        labelLink: "Domů",
-        // href: "home",
-        href: "/",
-        page: "home",
-        type: "fragment link"
-    },
-    {
-        labelLink: "Služby",
-        href: "/services",
-        page: "services",
-        type: "page drop down",
-        dropDownList: [
-            {
-                label: "Kuchyně na míru",
-                href: "/kitchens"
-            },
-            {
-                label: "Nábytek na míru",
-                href: "/furniture"
-            },
-            {
-                label: "Koupelny na míru",
-                href: "/bathroom"
-            }
-        ]
-    },
-    {
-        labelLink: "O nás",
-        href: "/about",
-        page: "about",
-        type: "page"
-    },
-    {
-        labelLink: "Kontakt",
-        href: "/contact",
-        page: "contact",
-        type: "page"
-    },
-];
 
 const Header = ({ ...props }: headerProps) => {
     const [dropDownToHover1, setDropDownToHover1] = useState<boolean>(false);
     const [isHamMenuOpen, setHamMenuToOpen] = useState<boolean>(false);
-    const [isHeaderMoving, setHeaderIsMoving] = useState<boolean>(false);
+    const [isHeaderScrolled, setHeaderScrolled] = useState<boolean>(false);
+
+    useEffect(() => {
+        const setHeaderScrolling = () => {
+            if (window.scrollY > 0) {
+                setHeaderScrolled(true);
+            } else {
+                setHeaderScrolled(false);
+            };
+        };
+
+        window.addEventListener("scroll", setHeaderScrolling);
+
+        return () => {
+            window.removeEventListener("scroll", setHeaderScrolling);
+        };
+    }, []);
 
     const {
         key,
@@ -83,7 +65,10 @@ const Header = ({ ...props }: headerProps) => {
     
     return (
         <Fragment>
-            <header className={clsx(`${className || ""} fixed text-white px-4 py-2 w-full z-10 bg-[#362315] header`)}
+            <header className={clsx(`
+            ${className || ""}
+            ${isHeaderScrolled ? "bg-[#362315]" : "bg-transparent"}
+            fixed text-white px-4 py-2 w-full z-10 transition-colors duration-300 ease-in-out header`)}
             key={`${key}-header`}>
                 <Wrapper className="flex justify-between items-center">
                     <Wrapper className="flex items-center gap-4">
@@ -99,7 +84,7 @@ const Header = ({ ...props }: headerProps) => {
                             </p>
                         </Wrapper>
                     </Wrapper>
-                    <ul className="hidden lg:flex lg:gap-8 header-items-wrapper">
+                    <ul className="hidden lg:flex lg:gap-4 header-items-wrapper">
                         {
                             headerSet.map((headerItem, headerItemIndex) => (
                                 <Fragment key={headerItemIndex}>
@@ -115,7 +100,7 @@ const Header = ({ ...props }: headerProps) => {
                                         )
                                     }
                                     {
-                                        headerItem.type === "page drop down" && (
+                                        headerItem.type === "drop down" && (
                                             <Fragment>
                                                 <li className="flex gap-2 header-item">
                                                     <Link
