@@ -38,7 +38,11 @@ const App = () => {
             />
             <DarkOverlayWrapper />
             <HeroOverlayWrapper>
-                <PageLabel pageLabelText="Služby / Nábytek na míru" />
+                {/* <PageLabel pageLabelText="Služby / Nábytek na míru" /> */}
+                <PageLabel
+                pageLabelHref="nabytek-na-miru"
+                pageLabelServicesText="Nábytek na míru"
+                />
                 <h2 className="text-5xl md:text-8xl font-black">
                     Nábytek na míru
                 </h2>

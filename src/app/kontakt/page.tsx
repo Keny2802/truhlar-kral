@@ -54,7 +54,11 @@ const Contact = ({ ...props }: contactProps) => {
                     {/* absolute top-[30%] lg:top-[25%] left-[12%] lg:left-[25%] text-white text-center max-w-6xl mx-auto */}
                     <DarkOverlayWrapper />
                     <HeroOverlayWrapper className="absolute inset-0 flex flex-col justify-center items-center max-w-6xl mx-auto text-center text-white">
-                        <PageLabel pageLabelText="Kontakt" />
+                        {/* <PageLabel pageLabelText="Kontakt" /> */}
+                        <PageLabel
+                        pageLabelHref="kontakt"
+                        pageLabelText="Kontakt"
+                        />
                         <h2 className="text-5xl lg:text-8xl font-black">
                             Kontaktujte nás
                         </h2>

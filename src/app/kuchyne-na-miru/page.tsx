@@ -38,7 +38,11 @@ const Page = () => {
             />
             <DarkOverlayWrapper />
             <HeroOverlayWrapper className="absolute inset-0 flex flex-col justify-center items-center text-white text-center max-w-6xl mx-auto">
-                <PageLabel pageLabelText="Služby / Kuchyně na míru" />
+                {/* <PageLabel pageLabelText="Služby / Kuchyně na míru" /> */}
+                <PageLabel
+                pageLabelHref="kuchyne-na-miru"
+                pageLabelServicesText="Kuchyně na míru"
+                />
                 <h2 className="text-5xl md:text-8xl font-black">
                     Kuchyně na míru
                 </h2>

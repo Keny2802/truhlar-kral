@@ -37,7 +37,11 @@ const App = () => {
             />
             <DarkOverlayWrapper />
             <HeroOverlayWrapper>
-                <PageLabel pageLabelText="O nás" />
+                {/* <PageLabel pageLabelText="O nás" /> */}
+                <PageLabel
+                pageLabelHref="o-nas"
+                pageLabelText="O nás"
+                />
                 <h2 className="text-5xl md:text-8xl font-black">
                     O nás
                 </h2>

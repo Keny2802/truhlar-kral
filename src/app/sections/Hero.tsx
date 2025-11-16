@@ -32,7 +32,11 @@ const Hero = () => {
                 {/* absolute top-[30%] left-[5%] lg:top-[25%] lg:left-[25%] text-white text-center max-w-6xl mx-auto */}
                 <DarkOverlayWrapper />
                 <HeroOverlayWrapper className="absolute inset-0 flex flex-col justify-center items-center text-white text-center max-w-6xl mx-auto p-4">
-                    <PageLabel pageLabelText="Domovská stránka" />
+                    {/* <PageLabel pageLabelText="Domovská stránka" /> */}
+                    <PageLabel
+                    pageLabelHref="/"
+                    pageLabelText="Domů"
+                    />
                     <h1 className="text-5xl lg:text-8xl font-black">
                         Truhlářství Král
                     </h1>
