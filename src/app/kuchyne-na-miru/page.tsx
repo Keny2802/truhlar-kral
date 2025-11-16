@@ -16,6 +16,7 @@ import Wrapper from "../components/Wrapper";
 import Header from "../components/Header";
 import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
 import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
+import SectionBanner from "../components/SectionBanner";
 import PageLabel from "../components/PageLabel";
 import Footer from "../sections/Footer";
 
@@ -63,7 +64,7 @@ const Page = () => {
                     </Link>
                 </Wrapper>
             </HeroOverlayWrapper>
-            <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16">
+            {/* <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16">
                 <Wrapper className="flex flex-col items-center gap-4">
                     <p className="text-4xl md:text-5xl font-black">
                         Kuchyně na míru
@@ -78,7 +79,11 @@ const Page = () => {
                         <ArrowRightIcon />
                     </Link>
                 </Wrapper>
-            </Wrapper>
+            </Wrapper> */}
+            <SectionBanner
+            bannerMainText="Kuchyně na míru"
+            bannerHref="kitchens-pricing"
+            />
             <Wrapper
                 className="bg-white shadow-md px-12 lg:px-24 py-8 lg:py-16 kitchen-wrapper"
                 attributes={{

@@ -16,6 +16,7 @@ import Wrapper from "../components/Wrapper";
 import Header from "../components/Header";
 import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
 import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
+import SectionBanner from "../components/SectionBanner";
 import PageLabel from "../components/PageLabel";
 import Footer from "../sections/Footer";
 
@@ -65,7 +66,7 @@ const App = () => {
                     </Link>
                 </Wrapper>
             </HeroOverlayWrapper>
-            <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16">
+            {/* <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16">
                 <Wrapper className="flex flex-col items-center gap-4">
                     <p className="text-4xl md:text-5xl font-black">
                         Koupelny na míru
@@ -80,7 +81,11 @@ const App = () => {
                         <ArrowRightIcon />
                     </Link>
                 </Wrapper>
-            </Wrapper>
+            </Wrapper> */}
+            <SectionBanner
+            bannerMainText="Koupelny na míru"
+            bannerHref="bathroom-pricing"
+            />
             <Wrapper
             className="bg-white shadow-md px-12 md:px-24 py-8 md:py-16"
             attributes={{

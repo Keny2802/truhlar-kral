@@ -2,6 +2,7 @@ import {
     Fragment,
     ReactNode
 } from "react";
+import clsx from "clsx";
 
 import Wrapper from "./Wrapper";
 
@@ -11,10 +12,21 @@ možná přidání children nebo spíše parent jako react node | null
 ten daný wrapper s relative
 */
 
-const DarkOverlayWrapper = () => {
+type darkOverlayWrapperProps = {
+    className?: string;
+    children?: ReactNode;
+};
+
+const DarkOverlayWrapper = ({ ...props }: darkOverlayWrapperProps) => {
+    const {
+        className,
+        children
+    } = props;
+
     return (
         <Fragment>
-            <Wrapper className="absolute inset-0 bg-black/40"></Wrapper>
+            <Wrapper className={clsx(`${className || null} absolute inset-0 bg-black/40`)}></Wrapper>
+            {children}
         </Fragment>
     );
 };

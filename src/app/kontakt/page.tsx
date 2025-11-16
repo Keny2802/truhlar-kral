@@ -16,6 +16,7 @@ import Header from "../components/Header";
 import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
 import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
 import PageLabel from "../components/PageLabel";
+import SectionBanner from "../components/SectionBanner";
 import Footer from "../sections/Footer";
 import Powered from "../components/Powered";
 import Year from "../components/Year";
@@ -80,6 +81,10 @@ const Contact = ({ ...props }: contactProps) => {
                         </Wrapper>
                     </HeroOverlayWrapper>
                 </Wrapper>
+                <SectionBanner
+                bannerMainText="Kontakt"
+                bannerHref="contact"
+                />
                 <Wrapper
                     className="bg-white shadow-md p-8 lg:px-24 lg:py-16 contact-form-wrapper">
                     <Wrapper className="flex justify-between gap-4 flex-col lg:flex-row">

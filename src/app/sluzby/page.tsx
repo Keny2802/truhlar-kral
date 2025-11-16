@@ -16,6 +16,7 @@ import Header from "../components/Header";
 import DarkOverlayWrapper from "../components/DarkOverlayWrapper";
 import PageLabel from "../components/PageLabel";
 import HeroOverlayWrapper from "../components/HeroOverlayWrapper";
+import SectionBanner from "../components/SectionBanner";
 import Services from "../sections/Services";
 import Footer from "../sections/Footer";
 
@@ -60,7 +61,7 @@ const App = () => {
                     </Link>
                 </Wrapper>
             </HeroOverlayWrapper>
-            <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16 border-b border-gray-200">
+            {/* <Wrapper className="bg-[#362315] text-white px-12 lg:px-24 py-8 lg:py-16 border-b border-gray-200">
                 <Wrapper className="flex flex-col items-center gap-4">
                     <p className="text-4xl md:text-5xl font-black">
                         Služby
@@ -75,7 +76,12 @@ const App = () => {
                         <ArrowRightIcon />
                     </Link>
                 </Wrapper>
-            </Wrapper>
+            </Wrapper> */}
+            <SectionBanner
+            bannerMainText="Služby"
+            bannerHref="services"
+            className="border-b border-gray-200"
+            />
             <Services id="services" />
             <Footer />
         </Fragment>

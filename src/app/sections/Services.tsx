@@ -70,6 +70,7 @@ const Services = ({ ...props }: servicesProps) => {
                     <p className="my-2">
                         Vyberte si z naší nabídky poskytovaných služeb
                     </p>
+                    <Wrapper className=""></Wrapper>
                     <Wrapper className="flex justify-center items-center gap-8 flex-col md:flex-row mt-4 services-wrapper">
                         {
                             services.map((service, serviceIndex) => (
