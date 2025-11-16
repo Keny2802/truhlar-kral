@@ -1,6 +1,6 @@
 export type servicePricing = {
     serviceIcon: string;
-    // servicePricingParent: string;
+    serviceParent?: string;
     service: string;
     serviceDescription: string;
     servicePrice: string

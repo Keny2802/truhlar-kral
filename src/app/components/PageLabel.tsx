@@ -21,7 +21,7 @@ const PageLabel = ({ ...props }: pageLabelProps) => {
 
     return (
         <Fragment>
-            <Wrapper className={clsx(`${className || ""} flex justify-center items-center`)}>
+            <Wrapper className={clsx(`${className || ""} mb-2 flex justify-center items-center`)}>
                 <Wrapper className={clsx(`
                 px-4 py-3
                 ${String(className).includes("bg-") ? className : "bg-[#362315]"}

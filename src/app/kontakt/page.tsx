@@ -60,7 +60,7 @@ const Contact = ({ ...props }: contactProps) => {
                         <p className="mt-4 text-base max-w-3xl">
                             S jakýmkoliv Vaším dotazem nás kontaktujte.
                         </p>
-                        <Wrapper className="flex justify-center items-center gap-4 mt-8">
+                        <Wrapper className="mt-8 w-full flex justify-center items-center flex-col md:flex-row gap-4 p-4 cta-wrapper">
                             <Link
                                 href="#contact"
                                 className="p-4 bg-[#362315] rounded-md cursor-pointer"

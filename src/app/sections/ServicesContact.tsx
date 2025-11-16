@@ -31,7 +31,7 @@ const ServiceContact = ({ ...props }) => {
                         Potřebujte konzultaci nebo radu, neváhejte se na Nás a naše truhlářství obrátit a společně vytvoříme Váš projekt podle Vašich představ.
                     </p>
                     <Link
-                    href={`/contact`}
+                    href={`/kontakt`}
                     className="bg-[#c49b5d] text-white p-4 rounded-md cursor-pointer w-max transition-colors duration-300 ease-in-out hover:bg-[#362315]">
                         Potřebuji konzultaci
                     </Link>

@@ -151,6 +151,16 @@ const MobileMenu = ({ ...props }: mobileMenuProps) => {
                                                     Koupelny na míru
                                                 </Link>
                                             </li>
+                                            <li className="drop-down-list-item">
+                                                <Link
+                                                href={`/stresni-prace`}
+                                                className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"
+                                                onClick={(e) => {
+                                                    setHamMenuToOpen(false);
+                                                }}>
+                                                    Střešní práce
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </Wrapper>
                                 </Fragment>

@@ -1,4 +1,4 @@
-import {
+import type {
     servicePricing
 } from "../types/servicePricing";
 

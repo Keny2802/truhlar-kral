@@ -44,10 +44,10 @@ const App = () => {
                 <p className="mt-4 text-base max-w-3xl">
                     Děláme koupelny na míru, přesně podle Vašich představ, snů a hlavně podle Vašeho očekávání.
                 </p>
-                <Wrapper className="mt-4 flex justify-center items-center gap-4">
+                <Wrapper className="mt-8 w-full flex justify-center items-center flex-col md:flex-row gap-4 p-4 cta-wrapper">
                     <Link
                     href={`#bathroom-pricing`}
-                    className="p-4 bg-[#362315] rounded-md cursor-pointer"
+                    className="p-4 bg-[#362315] rounded-md cursor-pointer w-full md:w-max"
                     onClick={(e) => {
                         setLinkWithoutHash(e, "bathroom-pricing");
                     }}
@@ -56,7 +56,7 @@ const App = () => {
                     </Link>
                     <Link
                     href={`#order-form`}
-                    className="p-4 bg-white text-black rounded-md cursor-pointer"
+                    className="p-4 bg-white text-black rounded-md cursor-pointer w-full md:w-max"
                     onClick={(e) => {
                         setLinkWithoutHash(e, "order-form");
                     }}

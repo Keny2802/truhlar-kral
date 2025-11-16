@@ -41,16 +41,16 @@ const Hero = () => {
                         včasné časové dodání a hlavně na to nejdůležitější radost zákazníka.
                         Naše specializace je nábytek a kuchyně na míru. Stavební práce jako jsou práce na střechách.
                     </p>
-                    <Wrapper className="mt-15 flex justify-center items-center gap-4 cta-wrapper">
+                    <Wrapper className="mt-8 w-full flex justify-center items-center flex-col md:flex-row gap-4 cta-wrapper">
                         <Link
                             href={`/kontakt`}
-                            className="p-4 bg-[#362315] rounded-md cursor-pointer">
+                            className="p-4 bg-[#362315] rounded-md cursor-pointer w-full md:w-max">
                             Kontaktujte nás
                         </Link>
                         <Link
                             href={`/kontakt`}
                             // href={`/offer`}
-                            className="p-4 bg-white text-black rounded-md cursor-pointer">
+                            className="p-4 bg-white text-black rounded-md cursor-pointer w-full md:w-max">
                             Nabídka zdarma
                         </Link>
                     </Wrapper>

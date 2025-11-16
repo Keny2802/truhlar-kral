@@ -31,7 +31,8 @@ type headerProps = {
     | "kontakt"
     | "kuchyne-na-miru"
     | "nabytek-na-miru"
-    | "koupelny-na-miru";
+    | "koupelny-na-miru"
+    | "stresni-prace";
     children?: ReactNode;
 };
 
@@ -70,13 +71,13 @@ const Header = ({ ...props }: headerProps) => {
             ${isHeaderScrolled ? "bg-[#362315]" : "bg-transparent"}
             fixed text-white px-4 py-2 w-full z-10 transition-colors duration-300 ease-in-out header`)}
             key={`${key}-header`}>
-                <Wrapper className="flex justify-between items-center">
+                <Wrapper className="flex justify-between items-center gap-2 md:gap-4">
                     <Wrapper className="flex items-center gap-4">
                         <Logo />
                         <Wrapper className={clsx(`
                             
                             logo-wrapper`)}>
-                            <p className="md:text-4xl text-3xl font-black logo">
+                            <p className="text-2xl md:text-4xl font-black logo">
                                 Truhlářství Král
                             </p>
                             <p className="text-base md:p-2 sub-logo">
@@ -90,7 +91,9 @@ const Header = ({ ...props }: headerProps) => {
                                 <Fragment key={headerItemIndex}>
                                     {
                                         headerItem.page === whichPage ? "" : (
-                                            <li className="header-item">
+                                            <li
+                                            className="header-item"
+                                            key={headerItemIndex}>
                                                 <Link
                                                 href={headerItem.href}
                                                 className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]">
@@ -102,7 +105,9 @@ const Header = ({ ...props }: headerProps) => {
                                     {
                                         headerItem.type === "drop down" && (
                                             <Fragment>
-                                                <li className="flex gap-2 header-item">
+                                                <li
+                                                className="flex gap-2 header-item"
+                                                key={headerItemIndex}>
                                                     <Link
                                                     href={headerItem.href}
                                                     className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]">
@@ -138,7 +143,9 @@ const Header = ({ ...props }: headerProps) => {
                                                                     {
                                                                         headerItem.dropDownList?.map((listItem, listItemIndex) => (
                                                                             <Fragment>
-                                                                                <li className="p-1 border-b border-gray-200 drop-down-list-item">
+                                                                                <li
+                                                                                className="p-1 border-b border-gray-200 drop-down-list-item"
+                                                                                key={listItemIndex}>
                                                                                     <Link
                                                                                     href={listItem.href}
                                                                                     className="transition-colors duration-100 ease-in-out hover:text-[#f8aa0e]"

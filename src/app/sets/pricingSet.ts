@@ -1,4 +1,8 @@
-const pricingSet = [
+import type {
+    servicePricing
+} from "../types/servicePricing";
+
+const pricingSet:servicePricing[] = [
     {
         serviceIcon: "🧱",
         serviceParent: "Stavební práce",

@@ -1,4 +1,6 @@
-import { servicePricing } from "../types/servicePricing";
+import type {
+    servicePricing
+} from "../types/servicePricing";
 
 const kitchensPricingSet:servicePricing[] = [
     {

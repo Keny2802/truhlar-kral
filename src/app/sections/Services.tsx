@@ -12,6 +12,12 @@ import clsx from "clsx";
 
 import Wrapper from "../components/Wrapper";
 
+type servicesProps = {
+    className?: string;
+    id?: string;
+    children?: ReactNode;
+};
+
 const services = [
     {
         label: "Služby",
@@ -43,10 +49,20 @@ const services = [
     }
 ];
 
-const Services = () => {
+const Services = ({ ...props }: servicesProps) => {
+    const {
+        className,
+        id,
+        children
+    } = props;
+
     return (
         <Fragment>
-            <Wrapper className="bg-[#362315] text-white px-6 md:px-24 md:py-16 py-4 w-full">
+            <Wrapper
+            className={clsx(`${className || ""} bg-[#362315] text-white px-6 md:px-24 md:py-16 py-4 w-full`)}
+            attributes={{
+                id: id || ""
+            }}>
                 <Wrapper className="mx-auto text-center">
                     <h2 className="pt-4 text-4xl md:text-5xl font-black">
                         Naše Služby

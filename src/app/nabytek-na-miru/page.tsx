@@ -44,10 +44,10 @@ const App = () => {
                 <p className="mt-4 text-base max-w-3xl">
                     Vyrábíme nábytek na zakázku, přesně podla Vaších představ a snů.
                 </p>
-                <Wrapper className="flex justify-center items-center gap-4 mt-8">
+                <Wrapper className="mt-8 w-full flex justify-center items-center flex-col md:flex-row gap-4 p-4 cta-wrapper">
                     <Link
                     href={`#furniture-pricing`}
-                    className="p-4 bg-[#362315] rounded-md cursor-pointer"
+                    className="p-4 bg-[#362315] rounded-md cursor-pointer w-full md:w-max"
                     onClick={(e) => {
                         setLinkWithoutHash(e, "furniture-pricing");
                     }}>
@@ -55,7 +55,7 @@ const App = () => {
                     </Link>
                     <Link
                     href={`#order-form`}
-                    className="p-4 bg-white text-black rounded-md cursor-pointer"
+                    className="p-4 bg-white text-black rounded-md cursor-pointer w-full md:w-max"
                     onClick={(e) => {
                         setLinkWithoutHash(e, "order-form");
                     }}>
